@@ -1,0 +1,80 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://actors/player/frames/east_walk_3.png" type="Texture" id=1]
+[ext_resource path="res://actors/player/frames/east_walk_2.png" type="Texture" id=2]
+[ext_resource path="res://actors/player/frames/east_walk_1.png" type="Texture" id=3]
+[ext_resource path="res://actors/player/frames/east_idle.png" type="Texture" id=4]
+[ext_resource path="res://actors/player/frames/east_walk_4.png" type="Texture" id=5]
+[ext_resource path="res://actors/player/frames/west_walk_4.png" type="Texture" id=6]
+[ext_resource path="res://actors/player/frames/west_walk_3.png" type="Texture" id=7]
+[ext_resource path="res://actors/player/frames/south_walk_1.png" type="Texture" id=8]
+[ext_resource path="res://actors/player/frames/north_idle.png" type="Texture" id=9]
+[ext_resource path="res://actors/player/frames/north_walk_2.png" type="Texture" id=10]
+[ext_resource path="res://actors/player/frames/south_walk_2.png" type="Texture" id=11]
+[ext_resource path="res://actors/player/frames/west_walk_2.png" type="Texture" id=12]
+[ext_resource path="res://actors/player/frames/south_idle.png" type="Texture" id=13]
+[ext_resource path="res://actors/player/frames/west_walk_1.png" type="Texture" id=14]
+[ext_resource path="res://actors/player/frames/west_idle.png" type="Texture" id=15]
+[ext_resource path="res://actors/player/frames/north_walk_1.png" type="Texture" id=16]
+[ext_resource path="res://actors/player/Player.gd" type="Script" id=17]
+[ext_resource path="res://actors/player/Camera.gd" type="Script" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "west_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "south_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "east_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "east_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "west_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "north_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "south_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "north_walk",
+"speed": 5.0
+} ]
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 17 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "east_idle"
+playing = true
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+process_mode = 0
+smoothing_enabled = true
+script = ExtResource( 18 )
+
+[node name="Tween" type="Tween" parent="Camera"]
