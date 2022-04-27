@@ -66,8 +66,10 @@ animations = [ {
 script = ExtResource( 17 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 8 )
 frames = SubResource( 1 )
 animation = "east_idle"
+offset = Vector2( 0, -8 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true

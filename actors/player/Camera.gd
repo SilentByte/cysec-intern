@@ -23,7 +23,7 @@ func _set_zoom_level(value: float) -> void:
 	tween.start()
 
 
-func _unhandled_input(event):
+func _input(event):
 	if event.is_action_pressed("zoom_in"):
 		_set_zoom_level(_zoom_level - zoom_offset)
 
