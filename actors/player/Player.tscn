@@ -21,6 +21,36 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "east_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "north_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "north_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "west_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "south_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "east_idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "west_walk",
@@ -30,36 +60,6 @@ animations = [ {
 "loop": true,
 "name": "south_idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "east_walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "east_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "west_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "north_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "south_walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "north_walk",
-"speed": 5.0
 } ]
 
 [node name="Player" type="Node2D"]
@@ -68,7 +68,6 @@ script = ExtResource( 17 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "east_idle"
-playing = true
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true

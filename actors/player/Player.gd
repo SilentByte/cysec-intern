@@ -3,6 +3,9 @@ extends Node2D
 var movement_direction = Vector2.ZERO
 var facing_direction = Vector2.ZERO
 
+func _ready() -> void:
+	$AnimatedSprite.play()
+
 func _physics_process(delta: float) -> void:
 	movement_direction = Vector2.ZERO
 
