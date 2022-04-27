@@ -8,6 +8,7 @@ export var zoom_duration := 0.5
 onready var tween: Tween = $Tween
 var _zoom_level := 1.0
 
+
 func _set_zoom_level(value: float) -> void:
 	_zoom_level = clamp(value, min_zoom, max_zoom)
 	tween.interpolate_property(
@@ -20,6 +21,7 @@ func _set_zoom_level(value: float) -> void:
 		tween.EASE_OUT
 	)
 	tween.start()
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("zoom_in"):

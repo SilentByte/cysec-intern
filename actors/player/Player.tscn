@@ -72,8 +72,15 @@ animation = "east_idle"
 [node name="Camera" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.5, 0.5 )
-process_mode = 0
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
 script = ExtResource( 18 )
 
 [node name="Tween" type="Tween" parent="Camera"]
