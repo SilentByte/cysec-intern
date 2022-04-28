@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/city.png-89161ef9f9f43a1dba933565f98de175.stex"
+path="res://.import/outdoors.png-3e74097ed40054ee3f2bf6facf54e5eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/world/city/tiles/city.png"
-dest_files=[ "res://.import/city.png-89161ef9f9f43a1dba933565f98de175.stex" ]
+source_file="res://tilesets/outdoors.png"
+dest_files=[ "res://.import/outdoors.png-3e74097ed40054ee3f2bf6facf54e5eb.stex" ]
 
 [params]
 
