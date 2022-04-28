@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/world/city/city.tscn" type="PackedScene" id=1]
 [ext_resource path="res://utils/debug_overlay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/main.gd" type="Script" id=3]
 
-[node name="Root" type="Node2D"]
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="DebugOverlay" parent="." instance=ExtResource( 2 )]
 
