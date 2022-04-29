@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/piano.wav-fcd97932e80e80755ccd310c02741661.sample"
+
+[deps]
+
+source_file="res://scenes/world/cafe/piano/piano.wav"
+dest_files=[ "res://.import/piano.wav-fcd97932e80e80755ccd310c02741661.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
