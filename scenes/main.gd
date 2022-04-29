@@ -6,7 +6,7 @@ func _ready() -> void:
 	pass  # Replace with function body.
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if not OS.is_debug_build():
 		return
 
