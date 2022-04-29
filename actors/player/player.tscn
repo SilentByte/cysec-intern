@@ -69,6 +69,7 @@ extents = Vector2( 3, 2 )
 script = ExtResource( 17 )
 
 [node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 0, -6 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 limit_smoothed = true
@@ -81,23 +82,19 @@ drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
 script = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Tween" type="Tween" parent="Camera"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 2 )
 frames = SubResource( 1 )
 animation = "east_idle"
 offset = Vector2( 0, -8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 6 )
 shape = SubResource( 2 )
 
 [node name="ForwardRayCast" type="RayCast2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( 0, -4 )
 enabled = true
 cast_to = Vector2( 8, 0 )

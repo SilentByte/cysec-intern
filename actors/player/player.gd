@@ -4,6 +4,7 @@ const SPEED := 50
 const RUN_MULTIPLIER := 2
 const INTERACTION_DISTANCE := 8
 
+onready var camera := $Camera
 onready var animated_sprite := $AnimatedSprite
 onready var forward_ray_cast := $ForwardRayCast
 
@@ -20,6 +21,17 @@ func _physics_process(_delta: float) -> void:
 	_process_input()
 	_process_animation()
 	_process_movement()
+
+
+func portal_to_global(pos: Vector2) -> void:
+	global_position = pos
+
+	camera.smoothing_enabled = false
+	camera.global_position = pos
+
+	yield(get_tree(), "idle_frame")
+
+	camera.smoothing_enabled = true
 
 
 func _update_forward_ray_cast() -> void:
