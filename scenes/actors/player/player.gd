@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const SPEED := 50
-const RUN_MULTIPLIER := 2
+const RUN_MULTIPLIER := 5  # 2
 const INTERACTION_DISTANCE := 8
 
 onready var camera := $Camera
