@@ -7,6 +7,7 @@ const INTERACTION_DISTANCE := 8
 onready var camera := $Camera
 onready var animated_sprite := $AnimatedSprite
 onready var forward_ray_cast := $ForwardRayCast
+onready var transition_manager := $"/root/Main/TransitionManager"
 
 var movement_direction := Vector2.ZERO
 var facing_direction := "east"
@@ -19,21 +20,16 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	camera.smoothing_enabled = !transition_manager.is_transitioning()
+
 	_process_input()
 	_process_animation()
 	_process_movement()
 
 
-func portal_to_global(pos: Vector2) -> void:
+func teleport_to_global(pos: Vector2) -> void:
 	restrict_movement = true
 	global_position = pos
-
-	camera.smoothing_enabled = false
-	camera.global_position = pos
-
-	yield(get_tree(), "idle_frame")
-
-	camera.smoothing_enabled = true
 
 
 func _update_forward_ray_cast() -> void:
@@ -57,7 +53,7 @@ func _process_input() -> void:
 				restrict_movement = false
 				break
 
-	if not restrict_movement:
+	if not restrict_movement and not transition_manager.is_transitioning():
 		if Input.is_action_pressed("move_east"):
 			movement_direction.x += 1.0
 			facing_direction = "east"
