@@ -6,11 +6,11 @@ onready var surface := $CanvasLayer/TextureRect
 
 var transition_delta := 0.0
 var transition_textures := [
-	preload("res://actors/transition_manager/transitions/pixelate.png"),
-	preload("res://actors/transition_manager/transitions/rotate.png"),
-	preload("res://actors/transition_manager/transitions/triangles.png"),
-	preload("res://actors/transition_manager/transitions/diagonal.png"),
-	preload("res://actors/transition_manager/transitions/spiral.png"),
+	preload("res://scenes/actors/transition_manager/transitions/pixelate.png"),
+	preload("res://scenes/actors/transition_manager/transitions/rotate.png"),
+	preload("res://scenes/actors/transition_manager/transitions/triangles.png"),
+	preload("res://scenes/actors/transition_manager/transitions/diagonal.png"),
+	preload("res://scenes/actors/transition_manager/transitions/spiral.png"),
 ]
 
 

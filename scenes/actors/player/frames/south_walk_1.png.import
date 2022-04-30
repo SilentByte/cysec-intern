@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/west_walk_2.png-8e7b6c30046f689352b716c2c7aa5386.stex"
+path="res://.import/south_walk_1.png-c5f8822dd7daead5cf1a8083c9487b2e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/frames/west_walk_2.png"
-dest_files=[ "res://.import/west_walk_2.png-8e7b6c30046f689352b716c2c7aa5386.stex" ]
+source_file="res://scenes/actors/player/frames/south_walk_1.png"
+dest_files=[ "res://.import/south_walk_1.png-c5f8822dd7daead5cf1a8083c9487b2e.stex" ]
 
 [params]
 

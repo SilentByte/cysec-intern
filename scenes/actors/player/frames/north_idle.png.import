@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/south_idle.png-dc9d92bb7dfc6645db284b919db2594e.stex"
+path="res://.import/north_idle.png-347592023eaef3b024fab67d72ce85fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/frames/south_idle.png"
-dest_files=[ "res://.import/south_idle.png-dc9d92bb7dfc6645db284b919db2594e.stex" ]
+source_file="res://scenes/actors/player/frames/north_idle.png"
+dest_files=[ "res://.import/north_idle.png-347592023eaef3b024fab67d72ce85fe.stex" ]
 
 [params]
 

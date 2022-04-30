@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spiral.png-8a3523557655897eda2623b597b29da8.stex"
+path="res://.import/spiral.png-b968d7043f3146adacd2f22e25a70d5d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/transition_manager/transitions/spiral.png"
-dest_files=[ "res://.import/spiral.png-8a3523557655897eda2623b597b29da8.stex" ]
+source_file="res://scenes/actors/transition_manager/transitions/spiral.png"
+dest_files=[ "res://.import/spiral.png-b968d7043f3146adacd2f22e25a70d5d.stex" ]
 
 [params]
 

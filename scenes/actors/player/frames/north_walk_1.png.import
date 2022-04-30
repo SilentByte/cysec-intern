@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/diagonal.png-2b1ad6c57ba5faecf50fb663c485e432.stex"
+path="res://.import/north_walk_1.png-d7eb49aeed8f53d3cdda0fd2a5be22cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/transition_manager/transitions/diagonal.png"
-dest_files=[ "res://.import/diagonal.png-2b1ad6c57ba5faecf50fb663c485e432.stex" ]
+source_file="res://scenes/actors/player/frames/north_walk_1.png"
+dest_files=[ "res://.import/north_walk_1.png-d7eb49aeed8f53d3cdda0fd2a5be22cc.stex" ]
 
 [params]
 

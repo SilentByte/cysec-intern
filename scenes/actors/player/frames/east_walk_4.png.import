@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/east_walk_3.png-d7fdfeaa8f94bc51afe521c4b2d085bc.stex"
+path="res://.import/east_walk_4.png-41946f6fd21ac558bc15b4fae1041881.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/frames/east_walk_3.png"
-dest_files=[ "res://.import/east_walk_3.png-d7fdfeaa8f94bc51afe521c4b2d085bc.stex" ]
+source_file="res://scenes/actors/player/frames/east_walk_4.png"
+dest_files=[ "res://.import/east_walk_4.png-41946f6fd21ac558bc15b4fae1041881.stex" ]
 
 [params]
 

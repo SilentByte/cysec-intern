@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/west_walk_1.png-4ab4f678a069a5495bb50e95a76dc4c3.stex"
+path="res://.import/triangles.png-cc75fadf3394e0ca01fb77c8ece6c2d0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/player/frames/west_walk_1.png"
-dest_files=[ "res://.import/west_walk_1.png-4ab4f678a069a5495bb50e95a76dc4c3.stex" ]
+source_file="res://scenes/actors/transition_manager/transitions/triangles.png"
+dest_files=[ "res://.import/triangles.png-cc75fadf3394e0ca01fb77c8ece6c2d0.stex" ]
 
 [params]
 

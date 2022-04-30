@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/triangles.png-a69867773a3784d31caa4680ede223d2.stex"
+path="res://.import/rotate.png-635848e731d52b452443925ea86889e3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actors/transition_manager/transitions/triangles.png"
-dest_files=[ "res://.import/triangles.png-a69867773a3784d31caa4680ede223d2.stex" ]
+source_file="res://scenes/actors/transition_manager/transitions/rotate.png"
+dest_files=[ "res://.import/rotate.png-635848e731d52b452443925ea86889e3.stex" ]
 
 [params]
 
