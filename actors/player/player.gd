@@ -11,6 +11,7 @@ onready var forward_ray_cast := $ForwardRayCast
 var movement_direction := Vector2.ZERO
 var facing_direction := "east"
 var is_running := false
+var restrict_movement := false
 
 
 func _ready() -> void:
@@ -24,6 +25,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func portal_to_global(pos: Vector2) -> void:
+	restrict_movement = true
 	global_position = pos
 
 	camera.smoothing_enabled = false
@@ -49,28 +51,35 @@ func _update_forward_ray_cast() -> void:
 func _process_input() -> void:
 	movement_direction = Vector2.ZERO
 
-	if Input.is_action_pressed("move_east"):
-		movement_direction.x += 1.0
-		facing_direction = "east"
+	if restrict_movement:
+		for a in ["move_east", "move_west", "move_north", "move_south", "interact", "run"]:
+			if Input.is_action_just_pressed(a):
+				restrict_movement = false
+				break
 
-	if Input.is_action_pressed("move_west"):
-		movement_direction.x -= 1.0
-		facing_direction = "west"
+	if not restrict_movement:
+		if Input.is_action_pressed("move_east"):
+			movement_direction.x += 1.0
+			facing_direction = "east"
 
-	if Input.is_action_pressed("move_north"):
-		movement_direction.y -= 1.0
-		facing_direction = "north"
+		if Input.is_action_pressed("move_west"):
+			movement_direction.x -= 1.0
+			facing_direction = "west"
 
-	if Input.is_action_pressed("move_south"):
-		movement_direction.y += 1.0
-		facing_direction = "south"
+		if Input.is_action_pressed("move_north"):
+			movement_direction.y -= 1.0
+			facing_direction = "north"
 
-	if Input.is_action_just_pressed("interact"):
-		var interactable = forward_ray_cast.get_collider()
-		if forward_ray_cast.is_colliding():
-			Utils.try_call(interactable, "interact")
+		if Input.is_action_pressed("move_south"):
+			movement_direction.y += 1.0
+			facing_direction = "south"
 
-	is_running = Input.is_action_pressed("run")
+		if Input.is_action_just_pressed("interact"):
+			var interactable = forward_ray_cast.get_collider()
+			if forward_ray_cast.is_colliding():
+				Utils.try_call(interactable, "interact")
+
+		is_running = Input.is_action_pressed("run")
 
 
 func _process_animation() -> void:
