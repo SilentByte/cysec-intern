@@ -8,6 +8,7 @@ onready var camera := $Camera
 onready var animated_sprite := $AnimatedSprite
 onready var forward_ray_cast := $ForwardRayCast
 onready var transition_manager := $"/root/Main/TransitionManager"
+onready var hud := $"/root/Main/Hud"
 
 var movement_direction := Vector2.ZERO
 var facing_direction := "east"
@@ -53,29 +54,31 @@ func _process_input() -> void:
 				restrict_movement = false
 				break
 
-	if not restrict_movement and not transition_manager.is_transitioning():
-		if Input.is_action_pressed("move_east"):
-			movement_direction.x += 1.0
-			facing_direction = "east"
+	if restrict_movement or transition_manager.is_transitioning() or hud.is_interacting():
+		return
 
-		if Input.is_action_pressed("move_west"):
-			movement_direction.x -= 1.0
-			facing_direction = "west"
+	if Input.is_action_pressed("move_east"):
+		movement_direction.x += 1.0
+		facing_direction = "east"
 
-		if Input.is_action_pressed("move_north"):
-			movement_direction.y -= 1.0
-			facing_direction = "north"
+	if Input.is_action_pressed("move_west"):
+		movement_direction.x -= 1.0
+		facing_direction = "west"
 
-		if Input.is_action_pressed("move_south"):
-			movement_direction.y += 1.0
-			facing_direction = "south"
+	if Input.is_action_pressed("move_north"):
+		movement_direction.y -= 1.0
+		facing_direction = "north"
 
-		if Input.is_action_just_pressed("interact"):
-			var interactable = forward_ray_cast.get_collider()
-			if forward_ray_cast.is_colliding():
-				Utils.try_call(interactable, "interact")
+	if Input.is_action_pressed("move_south"):
+		movement_direction.y += 1.0
+		facing_direction = "south"
 
-		is_running = Input.is_action_pressed("run")
+	if Input.is_action_just_pressed("interact"):
+		var interactable = forward_ray_cast.get_collider()
+		if forward_ray_cast.is_colliding():
+			Utils.try_call(interactable, "interact")
+
+	is_running = Input.is_action_pressed("run")
 
 
 func _process_animation() -> void:

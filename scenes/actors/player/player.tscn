@@ -21,9 +21,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "west_idle",
+"name": "south_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "south_walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -51,14 +56,9 @@ animations = [ {
 "name": "east_walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
-"name": "south_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "south_walk",
+"name": "west_idle",
 "speed": 5.0
 } ]
 

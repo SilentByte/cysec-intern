@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+onready var debug_label = $Container/DebugLabel
 onready var bottom_panel := $Container/BottomPanel
 onready var bottom_panel_label := $Container/BottomPanel/RichTextLabel
 onready var bottom_panel_text_timer := $Container/BottomPanel/TextTimer
@@ -8,6 +9,12 @@ onready var bottom_panel_tween := $Container/BottomPanel/Tween
 const BOTTOM_PANEL_INSIDE_Y := 230
 const BOTTOM_PANEL_OUTSIDE_Y := 500
 const BOTTOM_PANEL_SLIDE_DURATION := 0.5
+
+var is_bottom_panel_visible = false
+
+
+func is_interacting() -> bool:
+	return is_bottom_panel_visible
 
 
 func show_message(text: String) -> void:
@@ -18,7 +25,19 @@ func show_message(text: String) -> void:
 	_slide_in()
 
 
+func _process(_delta: float) -> void:
+	var debug_info := PoolStringArray(
+		[
+			"%d FPS " % Engine.get_frames_per_second(),
+			"%.2f MSPF" % (1.0 / Engine.get_frames_per_second() * 1000),
+		]
+	)
+
+	debug_label.text = debug_info.join("\n")
+
+
 func _slide_in() -> void:
+	is_bottom_panel_visible = true
 	bottom_panel_tween.interpolate_property(
 		bottom_panel,
 		"rect_position",
@@ -33,6 +52,7 @@ func _slide_in() -> void:
 
 
 func _slide_out() -> void:
+	is_bottom_panel_visible = false
 	bottom_panel_tween.interpolate_property(
 		bottom_panel,
 		"rect_position",
@@ -54,5 +74,4 @@ func _on_bottom_panel_text_timer_timeout() -> void:
 
 
 func _on_close_button_pressed() -> void:
-	print("CLOSE")
 	_slide_out()
