@@ -12,10 +12,10 @@ onready var area := $Area2D
 func _on_body_entered(body: Node) -> void:
 	print("Switching scene to %s @ %s" % [target_scene, portal_name])
 
+	transition_manager.transition()
+
 	# Prevent errors due to upcoming scene unload.
 	yield(get_tree(), "idle_frame")
-
-	transition_manager.transition()
 
 	world.get_child(0).queue_free()
 
