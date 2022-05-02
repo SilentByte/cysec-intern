@@ -4,6 +4,9 @@ onready var hud := $Hud
 
 
 func _ready() -> void:
+	if OS.is_debug_build():
+		return
+
 	hud.show_dialog(
 		{
 			"$begin":
