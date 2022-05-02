@@ -1,6 +1,11 @@
 extends CanvasLayer
+class_name Hud
 
-onready var debug_label = $Container/DebugLabel
+onready var debug_label := $Container/DebugLabel
+
+onready var panel := $Container/Panel
+onready var panel_label := $Container/Panel/RichTextLabel
+
 onready var bottom_panel := $Container/BottomPanel
 onready var bottom_panel_label := $Container/BottomPanel/RichTextLabel
 onready var bottom_panel_text_timer := $Container/BottomPanel/TextTimer
@@ -10,19 +15,12 @@ const BOTTOM_PANEL_INSIDE_Y := 230
 const BOTTOM_PANEL_OUTSIDE_Y := 500
 const BOTTOM_PANEL_SLIDE_DURATION := 0.5
 
-var is_bottom_panel_visible = false
+var panel_content := {}
+var is_bottom_panel_visible := false
 
 
-func is_interacting() -> bool:
-	return is_bottom_panel_visible
-
-
-func show_message(text: String) -> void:
-	bottom_panel_label.bbcode_text = text
-	bottom_panel_label.visible_characters = 0
-	bottom_panel_text_timer.start()
-
-	_slide_in()
+func _ready() -> void:
+	panel.hide()
 
 
 func _process(_delta: float) -> void:
@@ -36,7 +34,35 @@ func _process(_delta: float) -> void:
 	debug_label.text = debug_info.join("\n")
 
 
-func _slide_in() -> void:
+func _next_panel_part(part: String) -> void:
+	if not panel_content.has(part):
+		push_error("Panel content does not have part '%s'" % part)
+		_close_panel()
+		return
+
+	if part == "$end":
+		_close_panel()
+		return
+
+	panel_label.bbcode_text = panel_content[part]
+
+
+func _close_panel() -> void:
+	panel_content = {}
+	panel.hide()
+
+
+func _on_panel_meta_clicked(meta) -> void:
+	meta = str(meta)
+
+	if not meta.begins_with("$"):
+		OS.shell_open(meta)
+		return
+
+	_next_panel_part(meta)
+
+
+func _bottom_panel_slide_in() -> void:
 	is_bottom_panel_visible = true
 	bottom_panel_tween.interpolate_property(
 		bottom_panel,
@@ -51,8 +77,10 @@ func _slide_in() -> void:
 	bottom_panel_tween.start()
 
 
-func _slide_out() -> void:
+func _bottom_panel_slide_out() -> void:
 	is_bottom_panel_visible = false
+
+	bottom_panel_text_timer.stop()
 	bottom_panel_tween.interpolate_property(
 		bottom_panel,
 		"rect_position",
@@ -74,4 +102,31 @@ func _on_bottom_panel_text_timer_timeout() -> void:
 
 
 func _on_close_button_pressed() -> void:
-	_slide_out()
+	_bottom_panel_slide_out()
+
+
+func _on_bottom_panel_meta_clicked(meta) -> void:
+	meta = str(meta)
+	OS.shell_open(meta)
+
+
+func is_interacting() -> bool:
+	return panel.visible or is_bottom_panel_visible
+
+
+func show_message(text: String) -> void:
+	bottom_panel_label.bbcode_text = text
+	bottom_panel_label.visible_characters = 0
+	bottom_panel_text_timer.start()
+
+	_bottom_panel_slide_in()
+
+
+func show_dialog(content: Dictionary) -> void:
+	if not content.has("$begin"):
+		push_error("Panel content must have a beginning")
+		return
+
+	panel_content = content
+	_next_panel_part("$begin")
+	panel.show()

@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "CanvasLayer",
+"class": "Hud",
+"language": "GDScript",
+"path": "res://scenes/ui/hud/hud.gd"
+} ]
+_global_script_class_icons={
+"Hud": ""
+}
+
 [application]
 
 config/name="CySecIntern"

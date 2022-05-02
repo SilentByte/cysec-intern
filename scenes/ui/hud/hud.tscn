@@ -9,6 +9,7 @@
 script = ExtResource( 3 )
 
 [node name="Container" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0.901961 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
@@ -23,6 +24,26 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "DEBUG INFO"
 align = 2
+
+[node name="Panel" parent="Container" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 50.0
+margin_right = -100.0
+margin_bottom = -50.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 8.0
+margin_right = -12.0
+margin_bottom = -8.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+scroll_following = true
 
 [node name="BottomPanel" parent="Container" instance=ExtResource( 1 )]
 margin_left = 64.0
@@ -57,5 +78,7 @@ wait_time = 0.1
 
 [node name="Tween" type="Tween" parent="Container/BottomPanel"]
 
+[connection signal="meta_clicked" from="Container/Panel/RichTextLabel" to="." method="_on_panel_meta_clicked"]
+[connection signal="meta_clicked" from="Container/BottomPanel/RichTextLabel" to="." method="_on_bottom_panel_meta_clicked"]
 [connection signal="pressed" from="Container/BottomPanel/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="timeout" from="Container/BottomPanel/TextTimer" to="." method="_on_bottom_panel_text_timer_timeout"]
