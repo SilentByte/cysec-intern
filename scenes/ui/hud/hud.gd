@@ -34,6 +34,13 @@ func _process(_delta: float) -> void:
 	debug_label.text = debug_info.join("\n")
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("ui_cancel") and is_interacting():
+		_close_panel()
+		_close_bottom_panel()
+		get_tree().set_input_as_handled()
+
+
 func _next_panel_part(part: String) -> void:
 	if not panel_content.has(part):
 		push_error("Panel content does not have part '%s'" % part)
@@ -60,6 +67,11 @@ func _on_panel_meta_clicked(meta) -> void:
 		return
 
 	_next_panel_part(meta)
+
+
+func _close_bottom_panel() -> void:
+	if is_bottom_panel_visible:
+		_bottom_panel_slide_out()
 
 
 func _bottom_panel_slide_in() -> void:
