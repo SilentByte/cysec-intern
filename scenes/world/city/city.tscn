@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://scenes/world/city/cars/car.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/actors/portal/portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/actors/point_of_interest/point_of_interest.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Red Roof"
@@ -174,3 +175,6 @@ target_scene = "res://scenes/world/cafe/cafe.tscn"
 
 [node name="Target" type="Position2D" parent="Portals/CafePortal"]
 position = Vector2( 0, 16 )
+
+[node name="PointOfInterest" parent="." instance=ExtResource( 4 )]
+position = Vector2( 944, 520 )
