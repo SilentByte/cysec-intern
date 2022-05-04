@@ -2,7 +2,7 @@ extends Camera2D
 
 export var min_zoom := 0.25
 export var max_zoom := 2.0
-export var zoom_offset := 0.5
+export var zoom_offset := 0.75
 export var zoom_duration := 0.5
 
 onready var tween: Tween = $Tween
