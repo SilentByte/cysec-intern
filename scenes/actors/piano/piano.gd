@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var hud := $"/root/Main/Hud"
-onready var audio := $AudioStreamPlayer2D
+onready var audio := $AudioStreamPlayer
 onready var poi := $PointOfInterest
 
 

@@ -3,8 +3,8 @@
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://scenes/world/city/cars/car.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/actors/portal/portal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/actors/point_of_interest/point_of_interest.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/actors/usb_stick/usb_stick.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/actors/dodgy_dude/dodgy_dude.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Roof"
@@ -438,8 +438,8 @@ target_scene = "res://scenes/world/cafe/cafe.tscn"
 [node name="Target" type="Position2D" parent="Portals/CafePortal"]
 position = Vector2( 0, 16 )
 
-[node name="PointOfInterest" parent="." instance=ExtResource( 4 )]
-position = Vector2( 944, 520 )
-
 [node name="USBStick" parent="." instance=ExtResource( 5 )]
 position = Vector2( 872, 536 )
+
+[node name="DodgyDude" parent="." instance=ExtResource( 6 )]
+position = Vector2( 904, 520 )

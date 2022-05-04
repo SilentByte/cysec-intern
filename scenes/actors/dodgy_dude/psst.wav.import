@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/pickup.wav-e018950cb95a402873a28af44d379f69.sample"
+path="res://.import/psst.wav-dc8db45df49844c569f5892eebbe94b1.sample"
 
 [deps]
 
-source_file="res://scenes/actors/usb_stick/pickup.wav"
-dest_files=[ "res://.import/pickup.wav-e018950cb95a402873a28af44d379f69.sample" ]
+source_file="res://scenes/actors/dodgy_dude/psst.wav"
+dest_files=[ "res://.import/psst.wav-dc8db45df49844c569f5892eebbe94b1.sample" ]
 
 [params]
 

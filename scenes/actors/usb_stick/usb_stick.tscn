@@ -18,5 +18,5 @@ polygon = PoolVector2Array( 24, -27, 24, -37, 40, -37, 40, -27 )
 [node name="PointOfInterest" parent="." instance=ExtResource( 2 )]
 position = Vector2( 11, -10 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

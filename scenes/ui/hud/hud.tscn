@@ -81,13 +81,13 @@ wait_time = 0.1
 
 [node name="Tween" type="Tween" parent="Container/BottomPanel"]
 
-[node name="ChimeGood" type="AudioStreamPlayer2D" parent="."]
+[node name="ChimeGood" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
-[node name="ChimeBad" type="AudioStreamPlayer2D" parent="."]
+[node name="ChimeBad" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
-[node name="ChimeDefault" type="AudioStreamPlayer2D" parent="."]
+[node name="ChimeDefault" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [connection signal="meta_clicked" from="Container/Panel/RichTextLabel" to="." method="_on_panel_meta_clicked"]

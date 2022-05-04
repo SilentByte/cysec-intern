@@ -12,7 +12,7 @@ dest_files=[ "res://.import/chime_bad.wav-d2e6793534777cb97ab4c4f59464ad5c.sampl
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
