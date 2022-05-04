@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chime_default.wav-30a56e992fa2a560c0a568e20f224b81.sample"
+
+[deps]
+
+source_file="res://scenes/ui/hud/chime_default.wav"
+dest_files=[ "res://.import/chime_default.wav-30a56e992fa2a560c0a568e20f224b81.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

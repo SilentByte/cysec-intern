@@ -12,17 +12,13 @@ func _ready() -> void:
 			"$begin":
 			Utils.dialog_part(
 				"""
-					[color=#b00]HI THERE![/color]
+				<!HI THERE!>
 
+				We at CySec Inc. welcome you as our new intern! :-)
+				Give yourself some time to explore this part of town and then make your way to
+				our office in the NORTH-EAST.
 
-
-					We at CySec Inc. welcome you as our new intern! :-)
-					Give yourself some time to explore this part of town and then make your way to
-					our office in the NORTH-EAST.
-
-
-
-					[center][color=#0b0][url=$end]CLOSE[/url][/color][/center]
+				[center]<?[url=$end]CLOSE[/url]?>[/center]
 				"""
 			),
 		}

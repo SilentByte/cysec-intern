@@ -74,8 +74,8 @@ func _process_input() -> void:
 		facing_direction = "south"
 
 	if Input.is_action_just_pressed("interact"):
-		var interactable = forward_ray_cast.get_collider()
 		if forward_ray_cast.is_colliding():
+			var interactable = forward_ray_cast.get_collider()
 			Utils.try_call(interactable, "interact")
 
 	is_running = Input.is_action_pressed("run")

@@ -11,6 +11,10 @@ onready var bottom_panel_label := $Container/BottomPanel/RichTextLabel
 onready var bottom_panel_text_timer := $Container/BottomPanel/TextTimer
 onready var bottom_panel_tween := $Container/BottomPanel/Tween
 
+onready var chime_default := $ChimeDefault
+onready var chime_good := $ChimeGood
+onready var chime_bad := $ChimeBad
+
 const BOTTOM_PANEL_INSIDE_Y := 230
 const BOTTOM_PANEL_OUTSIDE_Y := 500
 const BOTTOM_PANEL_SLIDE_DURATION := 0.5
@@ -41,13 +45,23 @@ func _input(event: InputEvent) -> void:
 		get_tree().set_input_as_handled()
 
 
+func _play_chime(chime: String = "") -> void:
+	match chime:
+		"good":
+			chime_good.play()
+		"bad":
+			chime_bad.play()
+		_:
+			chime_default.play()
+
+
 func _next_panel_part(part: String) -> void:
-	if not panel_content.has(part):
-		push_error("Panel content does not have part '%s'" % part)
+	if part == "$end":
 		_close_panel()
 		return
 
-	if part == "$end":
+	if not panel_content.has(part):
+		push_error("Panel content does not have part '%s'" % part)
 		_close_panel()
 		return
 
@@ -66,7 +80,9 @@ func _on_panel_meta_clicked(meta) -> void:
 		OS.shell_open(meta)
 		return
 
-	_next_panel_part(meta)
+	var parts = meta.split(":")
+	_play_chime(Utils.at(parts, 1, "default"))
+	_next_panel_part(parts[0])
 
 
 func _close_bottom_panel() -> void:

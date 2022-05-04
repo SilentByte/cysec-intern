@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/piano.wav-fcd97932e80e80755ccd310c02741661.sample"
+path="res://.import/piano.wav-cf925d67e75c0f571bafdb97bd32a09a.sample"
 
 [deps]
 
-source_file="res://scenes/world/cafe/piano/piano.wav"
-dest_files=[ "res://.import/piano.wav-fcd97932e80e80755ccd310c02741661.sample" ]
+source_file="res://scenes/actors/piano/piano.wav"
+dest_files=[ "res://.import/piano.wav-cf925d67e75c0f571bafdb97bd32a09a.sample" ]
 
 [params]
 

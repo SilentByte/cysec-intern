@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piano.png-981f2d9bae842a72ec4ba859dcd14e15.stex"
+path="res://.import/piano.png-e5661bcfba69d3684e7fdf4aa9b4ed85.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/world/cafe/piano/piano.png"
-dest_files=[ "res://.import/piano.png-981f2d9bae842a72ec4ba859dcd14e15.stex" ]
+source_file="res://scenes/actors/piano/piano.png"
+dest_files=[ "res://.import/piano.png-e5661bcfba69d3684e7fdf4aa9b4ed85.stex" ]
 
 [params]
 

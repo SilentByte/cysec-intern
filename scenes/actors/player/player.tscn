@@ -26,29 +26,9 @@ animations = [ {
 "name": "south_idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "east_walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "north_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "north_walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "south_walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "west_walk",
+"name": "east_idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
@@ -56,14 +36,34 @@ animations = [ {
 "name": "west_idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "east_idle",
+"name": "south_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "east_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "north_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "west_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "north_idle",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3, 2 )
+extents = Vector2( 3, 3.5 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 17 )
@@ -93,6 +93,7 @@ animation = "east_idle"
 offset = Vector2( 0, -8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1.5 )
 shape = SubResource( 2 )
 
 [node name="ForwardRayCast" type="RayCast2D" parent="."]
