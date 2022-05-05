@@ -46,7 +46,11 @@ margin_bottom = -8.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
+meta_underlined = false
 scroll_following = true
+
+[node name="TextTimer" type="Timer" parent="Container/Panel"]
+wait_time = 0.01
 
 [node name="BottomPanel" parent="Container" instance=ExtResource( 1 )]
 margin_left = 64.0
@@ -64,6 +68,7 @@ margin_bottom = -8.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
+meta_underlined = false
 fit_content_height = true
 scroll_active = false
 scroll_following = true
@@ -77,7 +82,7 @@ mouse_default_cursor_shape = 2
 text = "X"
 
 [node name="TextTimer" type="Timer" parent="Container/BottomPanel"]
-wait_time = 0.05
+wait_time = 0.025
 
 [node name="Tween" type="Tween" parent="Container/BottomPanel"]
 
@@ -91,6 +96,7 @@ stream = ExtResource( 5 )
 stream = ExtResource( 6 )
 
 [connection signal="meta_clicked" from="Container/Panel/RichTextLabel" to="." method="_on_panel_meta_clicked"]
+[connection signal="timeout" from="Container/Panel/TextTimer" to="." method="_on_panel_text_timer_timeout"]
 [connection signal="meta_clicked" from="Container/BottomPanel/RichTextLabel" to="." method="_on_bottom_panel_meta_clicked"]
 [connection signal="pressed" from="Container/BottomPanel/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="timeout" from="Container/BottomPanel/TextTimer" to="." method="_on_bottom_panel_text_timer_timeout"]

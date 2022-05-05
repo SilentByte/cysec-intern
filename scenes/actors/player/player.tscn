@@ -27,6 +27,16 @@ animations = [ {
 "name": "east_walk",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "east_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "west_idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "south_walk",
@@ -50,16 +60,6 @@ animations = [ {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "north_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "east_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "west_idle",
 "speed": 5.0
 } ]
 

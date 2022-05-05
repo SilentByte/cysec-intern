@@ -5,6 +5,7 @@ onready var debug_label := $Container/DebugLabel
 
 onready var panel := $Container/Panel
 onready var panel_label := $Container/Panel/RichTextLabel
+onready var panel_text_timer := $Container/Panel/TextTimer
 
 onready var bottom_panel := $Container/BottomPanel
 onready var bottom_panel_label := $Container/BottomPanel/RichTextLabel
@@ -66,11 +67,20 @@ func _next_panel_part(part: String) -> void:
 		return
 
 	panel_label.bbcode_text = panel_content[part]
+	panel_label.visible_characters = 0
+	panel_text_timer.start()
 
 
 func _close_panel() -> void:
 	panel_content = {}
 	panel.hide()
+
+
+func _on_panel_text_timer_timeout() -> void:
+	if panel_label.visible_characters == panel_label.text.length():
+		panel_text_timer.stop()
+	else:
+		panel_label.visible_characters += 1
 
 
 func _on_panel_meta_clicked(meta) -> void:
