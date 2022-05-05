@@ -17,6 +17,7 @@ var restrict_movement := false
 
 
 func _ready() -> void:
+	facing_direction = "south"
 	$AnimatedSprite.play()
 
 

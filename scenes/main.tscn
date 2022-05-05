@@ -14,7 +14,7 @@ script = ExtResource( 3 )
 [node name="City" parent="World" instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 904, 536 )
+position = Vector2( 64, 544 )
 
 [node name="TransitionManager" parent="." instance=ExtResource( 5 )]
 
