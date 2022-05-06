@@ -199,6 +199,14 @@ target_scene = "res://scenes/world/city/city.tscn"
 [node name="Target" type="Position2D" parent="Portals/CityPortal"]
 position = Vector2( 0, -24 )
 
+[node name="OfficePortal" parent="Portals" instance=ExtResource( 3 )]
+position = Vector2( 216, 80 )
+portal_name = "LobbyPortal"
+target_scene = "res://scenes/world/office/office.tscn"
+
+[node name="Target" type="Position2D" parent="Portals/OfficePortal"]
+position = Vector2( 0, 24 )
+
 [node name="Actors" type="Node2D" parent="."]
 
 [node name="USBStick" parent="Actors" instance=ExtResource( 5 )]
