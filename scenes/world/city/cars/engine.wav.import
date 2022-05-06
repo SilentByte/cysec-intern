@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/engine.wav-d477ca4736d3d5a5b10a012852e3cfb1.sample"
+
+[deps]
+
+source_file="res://scenes/world/city/cars/engine.wav"
+dest_files=[ "res://.import/engine.wav-d477ca4736d3d5a5b10a012852e3cfb1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=true
+compress/mode=0
