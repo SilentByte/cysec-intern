@@ -9,7 +9,8 @@ func interact() -> void:
 	if audio.playing:
 		return
 
-	Facts.has_found_dodgy_dude = true
+	Facts.has_found_ice_cream_guy = true
+#	Facts.current_interaction ='ice_cream_guy' # TODO: Implement score tracking for good/bad, avoid duplicate scoring.
 
 	audio.play()
 	hud.show_dialog(
@@ -17,47 +18,64 @@ func interact() -> void:
 			"$begin":
 			Utils.dialog_part(
 				"""
-				Psst... hey, over here...
+				OH HI, care for some [rainbow]ICE CREAM[/rainbow]?
 
-				I've got a <!great deal!> for you! Look at this shiny new
-				<~iPhone 25 Superplus~>! I'll give it to you for $199.
+				I've got vanilla, chocolate, strawberry, ...
 
-				<#*You take a good look at the iPhone. It's in
-				excellent condition and everything is working fine.*#>
+				<?[url=$accept]1) YES PLEASE![/url]?>
 
-				<?[url=$accept:bad]1) That sounds like a bargain! I'll take it![/url]?>
-
-				<?[url=$reject:good]2) I don't trust this guy... I'll just leave.[/url]?>
+				<?[url=$reject]2) Not now, maybe next time.[/url]?>
 				"""
 			),
 			"$accept":
 			Utils.dialog_part(
 				"""
-				THAT WAS A <!RISKY DECISION!>!
+				<!AWESOME!!> By the way, we've got a special offer going on at the moment.
 
-				Congratulations! You may have just landed a great
-				bargain... or may face <!serious consequences!>.
+				If you sign up for our <~weekly newsletter~>, you'll get 50% off today!
 
-				The iPhone you have just purchased my contain spyware
-				or other malicious software. Even worse, it may have
-				been stolen and you have just purchased stolen goods.
+				<?[url=$sign-up:bad]1) Write down your e-mail address into the list
+				   in front of you.[/url]?>
 
-				[center]<#[url=https://www.welivesecurity.com/2020/04/22/buying-secondhand-device-what-keep-in-mind/]Click here to learn more.[/url]#>[/center]
-
-				<?[url=$end]CONTINUE[/url]?>
+				<?[url=$leave:good]2) No thanks, I'm not interested.[/url]?>
 				"""
 			),
 			"$reject":
 			Utils.dialog_part(
 				"""
-				<~Wise decision!~>
+				Sure, no problem!
 
-				The iPhone you have been offered may contain spyware
-				or other malicious software. Even worse, it could
-				have been stolen and the purchase of stolen goods
-				is illegal in most juristictions.
+				In case you change your mind, we've got a special offer going on at the moment.
 
-				[center]<#[url=https://www.welivesecurity.com/2020/04/22/buying-secondhand-device-what-keep-in-mind/]Click here to learn more.[/url]#>[/center]
+				If you sign up for our <~weekly newsletter~>, you'll get 50% off today!
+
+				<?[url=$sign-up:bad]1) Write down your e-mail address into the list
+				   in front of you.[/url]?>
+
+				<?[url=$leave:good]2) No thanks, I'm not interested.[/url]?>
+				"""
+			),
+			"$sign-up":
+			Utils.dialog_part(
+				"""
+				Well, you've just saved $2 but it's likely that your
+				e-mail address will end up on some <!spam list!> and
+				you'll see an increase in the number of unwanted
+				e-mails you receive.
+
+				Be mindful to whom you hand out your e-mail address.
+
+				<?[url=$end]CONTINUE[/url]?>
+				"""
+			),
+			"$leave":
+			Utils.dialog_part(
+				"""
+				<~That's a good choice.~>
+
+				Be mindful to whom you provide your e-mail address or
+				you might end up on some spam list and receive tons
+				of e-mails you don't want.
 
 				<?[url=$end]CONTINUE[/url]?>
 				"""
@@ -67,4 +85,4 @@ func interact() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	poi.visible = !Facts.has_found_dodgy_dude
+	poi.visible = !Facts.has_found_ice_cream_guy

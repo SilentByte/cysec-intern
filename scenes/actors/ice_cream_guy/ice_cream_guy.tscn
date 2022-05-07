@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/actors/dodgy_dude/dodgy_dude.gd" type="Script" id=1]
+[ext_resource path="res://scenes/actors/point_of_interest/point_of_interest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/actors/ice_cream_guy/ice_cream_guy.png" type="Texture" id=3]
+[ext_resource path="res://scenes/actors/ice_cream_guy/jingle.wav" type="AudioStream" id=4]
+
+[node name="IceCreamGuy" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -6, 0, -6, -13, 6, -13, 6, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 3 )
+
+[node name="PointOfInterest" parent="." instance=ExtResource( 2 )]
+position = Vector2( 8, -15 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -14.771
