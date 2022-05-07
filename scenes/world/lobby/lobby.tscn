@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/indoors.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://tilesets/outdoors.png" type="Texture" id=4]
 [ext_resource path="res://scenes/actors/usb_stick/usb_stick.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/world/lobby/addons.png" type="Texture" id=6]
+[ext_resource path="res://scenes/actors/social_engineer/social_engineer.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Everything"
@@ -217,3 +218,6 @@ position = Vector2( -64, -16 )
 
 [node name="USBStick" parent="Actors" instance=ExtResource( 5 )]
 position = Vector2( 309, 264 )
+
+[node name="SocialEngineer" parent="." instance=ExtResource( 7 )]
+position = Vector2( 184, 88 )
