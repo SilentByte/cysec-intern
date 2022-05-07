@@ -109,6 +109,50 @@ var dialog_content = {
 			"""
 		),
 	},
+	"upgrades":
+	{
+		"$begin":
+		Utils.dialog_part(
+			"""
+			A message just popped up, looks like there are new
+			upgrades and patches available for the operating
+			system and for some applications.
+
+			<?[url=$upgrade:good]1) It's gonna take a while, but I'll start upgrading.[/url]?>
+
+			<?[url=$wait:bad]2) Not now, it's gonna take too long.[/url]?>
+			"""
+		),
+		"$upgrade":
+		Utils.dialog_part(
+			"""
+			<~Yes, get those latest patches!~>
+
+			It's good practice to keep your system up-to-date,
+			especially when it comes to applying new security
+			patches and application upgrades.
+
+			[center]<#[url=https://www.cyber.gov.au/learn/update-devices]Click here to learn more.[/url]#>[/center]
+
+			<?[url=$end]CONTINUE[/url]?>
+			"""
+		),
+		"$wait":
+		Utils.dialog_part(
+			"""
+			<!The longer you wait, the less secure your system is!!>
+
+			While it's sometimes not convenient to upgrade
+			immediately, it's good practice to keep your
+			system up-to-date, especially when it comes to
+			applying new security patches and application upgrades.
+
+			[center]<#[url=https://www.cyber.gov.au/learn/update-devices]Click here to learn more.[/url]#>[/center]
+
+			<?[url=$end]CONTINUE[/url]?>
+			"""
+		),
+	},
 }
 
 

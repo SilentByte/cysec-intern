@@ -744,4 +744,4 @@ mode = "exe"
 
 [node name="Laptop" parent="Actors/Laptop" instance=ExtResource( 15 )]
 position = Vector2( -528, 344 )
-mode = "exe"
+mode = "upgrades"
