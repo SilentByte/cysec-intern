@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/actors/point_of_interest/point_of_interest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/actors/laptop/laptop.gd" type="Script" id=2]
+[ext_resource path="res://scenes/actors/laptop/laptop.png" type="Texture" id=3]
+[ext_resource path="res://scenes/actors/laptop/startup.wav" type="AudioStream" id=4]
+
+[node name="Laptop" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 10 )
+polygon = PoolVector2Array( -8, -4, -8, -15, 5, -15, 5, -4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="PointOfInterest" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7, -6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0

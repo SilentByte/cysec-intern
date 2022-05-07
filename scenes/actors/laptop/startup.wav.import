@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/startup.wav-dcb2d9ad720d660f6acaab0bd19fd8e8.sample"
+
+[deps]
+
+source_file="res://scenes/actors/laptop/startup.wav"
+dest_files=[ "res://.import/startup.wav-dcb2d9ad720d660f6acaab0bd19fd8e8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0
