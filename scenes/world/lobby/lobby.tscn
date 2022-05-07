@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/indoors.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scenes/actors/usb_stick/usb_stick.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/world/lobby/addons.png" type="Texture" id=6]
 [ext_resource path="res://scenes/actors/social_engineer/social_engineer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/actors/message_interactable/message_interactable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/world/lobby/receptionist.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Everything"
@@ -192,7 +194,7 @@ position = Vector2( -64, -16 )
 polygon = PoolVector2Array( 192, 368, 226, 368, 226, 304, 259, 304, 259, 276, 272, 276, 272, 272, 304, 272, 304, 276, 320, 276, 320, 112, 306, 112, 306, 96, 238, 96, 238, 48, 352, 48, 352, 96, 352, 384, 192, 384 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 192, 320, 192, 368, 205, 368, 205, 304, 178, 304, 144, 304, 144, 240, 128, 240, 128, 128, 93, 128, 93, 96, 194, 96, 194, 48, 240, 48, 240, 32, 176, 32, 176, 80, 64, 80, 64, 320 )
+polygon = PoolVector2Array( 192, 320, 192, 368, 205, 368, 205, 304, 178, 304, 144, 304, 144, 240, 128, 240, 128, 184, 112, 184, 112, 168, 128, 168, 128, 128, 93, 128, 93, 96, 194, 96, 194, 48, 240, 48, 240, 32, 176, 32, 176, 80, 64, 80, 64, 320 )
 
 [node name="Portals" type="Node2D" parent="."]
 position = Vector2( -64, -16 )
@@ -221,3 +223,11 @@ position = Vector2( 309, 264 )
 
 [node name="SocialEngineer" parent="." instance=ExtResource( 7 )]
 position = Vector2( 184, 88 )
+
+[node name="Receptionist" type="Sprite" parent="."]
+position = Vector2( 48, 160 )
+texture = ExtResource( 9 )
+
+[node name="MessageInteractable" parent="Receptionist" instance=ExtResource( 8 )]
+position = Vector2( 8, 0 )
+message = "Oh, hey there! You must be the new intern! I see you got your badge already. Take the elevator and head upstairs! "

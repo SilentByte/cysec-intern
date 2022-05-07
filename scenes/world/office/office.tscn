@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/indoors.png" type="Texture" id=2]
 [ext_resource path="res://scenes/actors/portal/portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tilesets/outdoors.png" type="Texture" id=4]
 [ext_resource path="res://scenes/world/office/addons.png" type="Texture" id=5]
+[ext_resource path="res://scenes/actors/laptop/laptop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/world/office/john.png" type="Texture" id=7]
+[ext_resource path="res://scenes/world/office/mike.png" type="Texture" id=8]
+[ext_resource path="res://scenes/actors/message_interactable/message_interactable.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Everything"
@@ -272,7 +276,7 @@ tile_data = PoolIntArray( 393229, 2, 655394, 458757, 1, 17, 458764, 1, 17, 45876
 polygon = PoolVector2Array( 192, 384, 192, 304, 172, 304, 172, 288, 144, 288, 144, 304, 128, 304, 128, 288, 92, 288, 92, 256, 128, 256, 128, 272, 160, 272, 160, 256, 176, 256, 176, 212, 160, 212, 160, 176, 176, 176, 176, 147, 160, 147, 160, 112, 195, 112, 195, 128, 237, 128, 237, 96, 64, 96, 64, 384 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 240, 384, 240, 304, 280, 304, 324, 304, 324, 295, 332, 295, 332, 304, 342, 304, 342, 272, 272, 272, 272, 256, 256, 256, 256, 227, 272, 227, 272, 203, 256, 203, 256, 147, 336, 147, 336, 128, 323, 128, 323, 112, 237, 112, 237, 80, 368, 80, 368, 384 )
+polygon = PoolVector2Array( 240, 384, 240, 304, 280, 304, 324, 304, 324, 295, 332, 295, 332, 304, 342, 304, 342, 272, 272, 272, 272, 256, 256, 256, 256, 227, 272, 227, 272, 203, 256, 203, 256, 189, 272, 189, 272, 176, 256, 176, 256, 147, 336, 147, 336, 128, 323, 128, 323, 112, 237, 112, 237, 80, 368, 80, 368, 384 )
 
 [node name="Portals" type="Node2D" parent="."]
 
@@ -286,3 +290,24 @@ target_scene = "res://scenes/world/lobby/lobby.tscn"
 position = Vector2( 0, -16 )
 
 [node name="Actors" type="Node2D" parent="."]
+
+[node name="Laptop" parent="." instance=ExtResource( 6 )]
+position = Vector2( 263, 182 )
+mode = "upgrades"
+
+[node name="Mike" type="Sprite" parent="Laptop"]
+position = Vector2( 41, 98 )
+texture = ExtResource( 8 )
+
+[node name="John" type="Sprite" parent="Laptop/Mike"]
+position = Vector2( 0, 10 )
+texture = ExtResource( 7 )
+
+[node name="MessageInteractable" parent="." instance=ExtResource( 9 )]
+position = Vector2( 306, 288 )
+scale = Vector2( 1, 2 )
+message = "... ... May I help you? ... ... ...
+
+<~ OH RIGHT! HEY, LISTEN UP EVERYBODY! SAY HI TO THE NEW INTERN! ~>
+
+Welcome to CySec! My name is Mike and this is John, we're both Cyber Security Specialists!"

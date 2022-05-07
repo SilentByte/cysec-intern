@@ -518,7 +518,6 @@ scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 384, 560, 384, 547, 371, 547, 371, 557, 0, 557, 0, 464, -16, 464, -16, 432, 32, 432, 32, 416, -32, 416, -32, 608, 384, 608 )
@@ -530,7 +529,7 @@ polygon = PoolVector2Array( 32, 448, 32, 464, 48, 464, 48, 448, 64, 448, 64, 464
 polygon = PoolVector2Array( 400, 557, 400, 608, 656, 608, 656, 992, 704, 992, 704, 608, 1280, 608, 1280, 557, 1055, 557, 704, 558, 704, 404, 656, 404, 656, 558, 413, 557, 413, 547, 400, 547 )
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 704, 380, 704, 0, 480, 0, 480, 192, 528, 192, 528, 208, 544, 208, 544, 192, 608, 192, 624, 192, 624, 176, 656, 176, 656, 208, 639, 208, 629, 208, 629, 224, 639, 224, 639, 257, 629, 257, 629, 272, 640, 272, 640, 288, 656, 288, 656, 380 )
+polygon = PoolVector2Array( 704, 380, 704, 0, 480, 0, 480, 192, 528, 192, 528, 208, 552, 208, 552, 192, 568, 192, 568, 208, 589, 208, 589, 192, 608, 192, 624, 192, 624, 176, 656, 176, 656, 208, 639, 208, 629, 208, 629, 224, 639, 224, 639, 257, 629, 257, 629, 272, 640, 272, 640, 288, 656, 288, 656, 380 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 16, 512, 16, 544, 20, 544, 20, 537, 76, 537, 76, 544, 80, 544, 80, 528, 80, 528, 80, 512 )
