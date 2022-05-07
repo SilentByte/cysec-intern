@@ -48,7 +48,6 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
 meta_underlined = false
-scroll_following = true
 
 [node name="TextTimer" type="Timer" parent="Container/Panel"]
 wait_time = 0.01

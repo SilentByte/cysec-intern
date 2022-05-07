@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://scenes/actors/ice_cream_guy/ice_cream_guy.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/world/city/sfx/search_02.wav" type="AudioStream" id=10]
 [ext_resource path="res://scenes/world/city/water.png" type="Texture" id=11]
 [ext_resource path="res://scenes/world/city/car_spawner.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/actors/poster/poster.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Roof"
@@ -493,16 +494,13 @@ position = Vector2( 568, 456 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 4 )
 
-[node name="IceCreamGuy" parent="Decorations" instance=ExtResource( 2 )]
-position = Vector2( 213, 528 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 384, 560, 384, 547, 371, 547, 371, 557, 0, 557, 0, 464, -16, 464, -16, 432, 32, 432, 32, 416, -32, 416, -32, 608, 384, 608 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 32, 448, 32, 464, 48, 464, 48, 448, 64, 448, 64, 464, 96, 464, 144, 464, 163, 464, 176, 464, 176, 464, 176, 432, 184, 432, 184, 416, 176, 416, 176, 366, 188, 366, 188, 338, 176, 338, 176, 288, 208, 288, 208, 384, 194, 384, 194, 400, 208, 400, 208, 464, 224, 464, 224, 448, 256, 448, 256, 464, 272, 464, 304, 464, 304, 512, 368, 512, 368, 496, 400, 496, 400, 512, 467, 512, 467, 528, 494, 528, 494, 496, 563, 496, 563, 482, 575, 482, 575, 496, 595, 496, 595, 510, 605, 510, 605, 496, 627, 496, 627, 320, 484, 320, 484, 273, 495, 273, 495, 242, 484, 242, 484, 176, 304, 176, 304, 224, 208, 224, 208, 208, 80, 208, 80, 288, 32, 288 )
+polygon = PoolVector2Array( 32, 448, 32, 464, 48, 464, 48, 448, 64, 448, 64, 464, 96, 464, 144, 464, 163, 464, 176, 464, 176, 464, 176, 432, 184, 432, 184, 416, 176, 416, 176, 366, 188, 366, 188, 338, 176, 338, 176, 288, 208, 288, 208, 384, 194, 384, 194, 400, 208, 400, 208, 464, 224, 464, 224, 448, 256, 448, 256, 464, 272, 464, 304, 464, 304, 512, 368, 512, 368, 496, 400, 496, 400, 512, 467, 512, 467, 528, 494, 528, 494, 496, 504, 496, 504, 448, 520, 448, 520, 496, 563, 496, 563, 482, 575, 482, 575, 496, 595, 496, 595, 510, 605, 510, 605, 496, 627, 496, 627, 320, 484, 320, 484, 273, 495, 273, 495, 242, 484, 242, 484, 176, 304, 176, 304, 224, 208, 224, 208, 208, 80, 208, 80, 288, 32, 288 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 400, 557, 400, 608, 656, 608, 656, 992, 704, 992, 704, 608, 1280, 608, 1280, 557, 1055, 557, 704, 558, 704, 404, 656, 404, 656, 558, 413, 557, 413, 547, 400, 547 )
@@ -710,3 +708,9 @@ despawn_range = -1600.0
 car_speed = 120.0
 spawn_interval = 8.0
 spawn_variability = 5.0
+
+[node name="IceCreamGuy" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 213, 528 )
+
+[node name="Poster" parent="Actors" instance=ExtResource( 13 )]
+position = Vector2( 512, 480 )
