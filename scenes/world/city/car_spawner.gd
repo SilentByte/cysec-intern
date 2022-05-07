@@ -35,6 +35,7 @@ func _set_spawn_variability(value: float) -> void:
 
 func _ready() -> void:
 	reset()
+	_on_spawn_timer_timeout()
 
 
 func _draw() -> void:
