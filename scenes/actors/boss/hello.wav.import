@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hello.wav-80a220e4ec0fa8bd77308e9ffd090ee7.sample"
+
+[deps]
+
+source_file="res://scenes/actors/boss/hello.wav"
+dest_files=[ "res://.import/hello.wav-80a220e4ec0fa8bd77308e9ffd090ee7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

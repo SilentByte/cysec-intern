@@ -741,7 +741,3 @@ position = Vector2( 512, 480 )
 [node name="Laptop" parent="Actors" instance=ExtResource( 15 )]
 position = Vector2( 560, 200 )
 mode = "exe"
-
-[node name="Laptop" parent="Actors/Laptop" instance=ExtResource( 15 )]
-position = Vector2( -528, 344 )
-mode = "upgrades"
