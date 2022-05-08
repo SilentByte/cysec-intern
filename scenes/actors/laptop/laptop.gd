@@ -160,11 +160,9 @@ func interact() -> void:
 	if audio.playing:
 		return
 
-	Facts.found_laptop_modes.append(mode)
-
 	audio.play()
-	hud.show_dialog(dialog_content[mode])
+	hud.show_dialog("laptop:%s" % mode, dialog_content[mode])
 
 
 func _physics_process(delta: float) -> void:
-	poi.visible = !Facts.found_laptop_modes.has(mode)
+	poi.visible = !Facts.has_had_interaction("laptop:%s" % mode)

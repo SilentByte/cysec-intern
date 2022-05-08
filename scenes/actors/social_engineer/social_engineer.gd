@@ -9,10 +9,9 @@ func interact() -> void:
 	if audio.playing:
 		return
 
-	Facts.has_found_social_engineer = true
-
 	audio.play()
 	hud.show_dialog(
+		"social_engineer",
 		{
 			"$begin":
 			Utils.dialog_part(
@@ -33,7 +32,7 @@ func interact() -> void:
 			"$accept":
 			Utils.dialog_part(
 				"""
-				Err... bad idea!
+				<!Err... bad idea!!>
 
 				You don't know Tammy, do you? She might not be what
 				you think she is and may not even work here.
@@ -74,4 +73,4 @@ func interact() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	poi.visible = !Facts.has_found_social_engineer
+	poi.visible = !Facts.has_had_interaction("social_engineer")

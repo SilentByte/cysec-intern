@@ -9,11 +9,9 @@ func interact() -> void:
 	if audio.playing:
 		return
 
-	Facts.has_found_ice_cream_guy = true
-#	Facts.current_interaction ='ice_cream_guy' # TODO: Implement score tracking for good/bad, avoid duplicate scoring.
-
 	audio.play()
 	hud.show_dialog(
+		"ice_cream_guy",
 		{
 			"$begin":
 			Utils.dialog_part(
@@ -85,4 +83,4 @@ func interact() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	poi.visible = !Facts.has_found_ice_cream_guy
+	poi.visible = !Facts.has_had_interaction("ice_cream_guy")

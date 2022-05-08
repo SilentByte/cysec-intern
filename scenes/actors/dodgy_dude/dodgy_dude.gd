@@ -9,10 +9,9 @@ func interact() -> void:
 	if audio.playing:
 		return
 
-	Facts.has_found_dodgy_dude = true
-
 	audio.play()
 	hud.show_dialog(
+		"dodgy_dude",
 		{
 			"$begin":
 			Utils.dialog_part(
@@ -67,4 +66,4 @@ func interact() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	poi.visible = !Facts.has_found_dodgy_dude
+	poi.visible = !Facts.has_had_interaction("dodgy_dude")

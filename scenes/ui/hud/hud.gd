@@ -29,10 +29,15 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if not OS.is_debug_build():
+		debug_label.text = ""
+		return
+
 	var debug_info := PoolStringArray(
 		[
 			"%d FPS " % Engine.get_frames_per_second(),
 			"%.2f MSPF" % (1.0 / Engine.get_frames_per_second() * 1000),
+			Facts.had_interactions().join("\n"),
 		]
 	)
 
@@ -46,11 +51,13 @@ func _input(event: InputEvent) -> void:
 		get_tree().set_input_as_handled()
 
 
-func _play_chime(chime: String = "") -> void:
+func _handle_interaction(chime: String = "") -> void:
 	match chime:
 		"good":
+			Facts.good_interaction()
 			chime_good.play()
 		"bad":
+			Facts.bad_interaction()
 			chime_bad.play()
 		_:
 			chime_default.play()
@@ -91,7 +98,7 @@ func _on_panel_meta_clicked(meta) -> void:
 		return
 
 	var parts = meta.split(":")
-	_play_chime(Utils.at(parts, 1, "default"))
+	_handle_interaction(Utils.at(parts, 1, "default"))
 	_next_panel_part(parts[0])
 
 
@@ -160,10 +167,12 @@ func show_message(text: String) -> void:
 	_bottom_panel_slide_in()
 
 
-func show_dialog(content: Dictionary) -> void:
+func show_dialog(interaction: String, content: Dictionary) -> void:
 	if not content.has("$begin"):
-		push_error("Panel content must have a beginning")
+		push_error("Panel content for %s must have a beginning" % interaction)
 		return
+
+	Facts.new_interaction(interaction)
 
 	panel_content = content
 	_next_panel_part("$begin")

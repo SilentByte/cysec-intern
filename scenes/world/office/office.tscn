@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/indoors.png" type="Texture" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://scenes/world/office/john.png" type="Texture" id=7]
 [ext_resource path="res://scenes/world/office/mike.png" type="Texture" id=8]
 [ext_resource path="res://scenes/actors/message_interactable/message_interactable.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/world/office/nathan.png" type="Texture" id=10]
+[ext_resource path="res://scenes/world/office/stephen.png" type="Texture" id=11]
+[ext_resource path="res://scenes/actors/laptop/laptop.png" type="Texture" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Everything"
@@ -271,6 +274,7 @@ format = 1
 tile_data = PoolIntArray( 393229, 2, 655394, 458757, 1, 17, 458764, 1, 17, 458765, 2, 786463, 458766, 1, 17, 589829, 3, 4, 589830, 3, 5, 589831, 3, 5, 589832, 3, 5, 589833, 3, 5, 589834, 3, 3, 655365, 3, 65540, 655366, 3, 65541, 655367, 3, 65541, 655368, 3, 65541, 655369, 3, 65541, 655370, 3, 65539, 917509, 3, 4, 917510, 3, 5, 917511, 3, 5, 917512, 3, 5, 917513, 3, 5, 917514, 3, 3, 917520, 3, 4, 917521, 3, 5, 917522, 3, 5, 917523, 3, 5, 917524, 3, 5, 917525, 3, 3, 983045, 3, 65540, 983046, 3, 65541, 983047, 3, 65541, 983048, 3, 65541, 983049, 3, 65541, 983050, 3, 65539, 983056, 3, 65540, 983057, 3, 65541, 983058, 3, 65541, 983059, 3, 65541, 983060, 3, 65541, 983061, 3, 65539 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 192, 384, 192, 304, 172, 304, 172, 288, 144, 288, 144, 304, 128, 304, 128, 288, 92, 288, 92, 256, 128, 256, 128, 272, 160, 272, 160, 256, 176, 256, 176, 212, 160, 212, 160, 176, 176, 176, 176, 147, 160, 147, 160, 112, 195, 112, 195, 128, 237, 128, 237, 96, 64, 96, 64, 384 )
@@ -291,19 +295,23 @@ position = Vector2( 0, -16 )
 
 [node name="Actors" type="Node2D" parent="."]
 
-[node name="Laptop" parent="." instance=ExtResource( 6 )]
+[node name="Nathan" type="Sprite" parent="Actors"]
+position = Vector2( 104, 219 )
+texture = ExtResource( 10 )
+
+[node name="Laptop2" type="Sprite" parent="Actors"]
+position = Vector2( 120, 182 )
+texture = ExtResource( 12 )
+
+[node name="Stephen" type="Sprite" parent="Actors/Laptop2"]
+position = Vector2( 0, 8 )
+texture = ExtResource( 11 )
+
+[node name="Laptop" parent="Actors" instance=ExtResource( 6 )]
 position = Vector2( 263, 182 )
 mode = "upgrades"
 
-[node name="Mike" type="Sprite" parent="Laptop"]
-position = Vector2( 41, 98 )
-texture = ExtResource( 8 )
-
-[node name="John" type="Sprite" parent="Laptop/Mike"]
-position = Vector2( 0, 10 )
-texture = ExtResource( 7 )
-
-[node name="MessageInteractable" parent="." instance=ExtResource( 9 )]
+[node name="MessageInteractable" parent="Actors" instance=ExtResource( 9 )]
 position = Vector2( 306, 288 )
 scale = Vector2( 1, 2 )
 message = "... ... May I help you? ... ... ...
@@ -311,3 +319,12 @@ message = "... ... May I help you? ... ... ...
 <~ OH RIGHT! HEY, LISTEN UP EVERYBODY! SAY HI TO THE NEW INTERN! ~>
 
 Welcome to CySec! My name is Mike and this is John, we're both Cyber Security Specialists!"
+
+[node name="Mike" type="Sprite" parent="Actors/MessageInteractable"]
+position = Vector2( -2, -4 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="John" type="Sprite" parent="Actors/MessageInteractable/Mike"]
+position = Vector2( 0, 10 )
+texture = ExtResource( 7 )
