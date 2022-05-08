@@ -508,8 +508,12 @@ position = Vector2( 0, -16 )
 [node name="Piano" parent="Actors" instance=ExtResource( 3 )]
 position = Vector2( 416, 160 )
 
-[node name="Laptop" parent="Actors" instance=ExtResource( 7 )]
+[node name="VPNLaptop" parent="Actors" instance=ExtResource( 7 )]
 position = Vector2( 247, 247 )
+
+[node name="2FALaptop" parent="Actors" instance=ExtResource( 7 )]
+position = Vector2( 283, 150 )
+mode = "2fa"
 
 [node name="Thomas" type="Sprite" parent="."]
 position = Vector2( 120, 176 )

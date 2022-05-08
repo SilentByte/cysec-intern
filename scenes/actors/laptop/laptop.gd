@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(String, "vpn", "upgrades", "exe") var mode = "vpn"
+export(String, "vpn", "upgrades", "exe", "2fa") var mode = "vpn"
 
 onready var hud := $"/root/Main/Hud"
 onready var audio := $AudioStreamPlayer
@@ -148,6 +148,58 @@ var dialog_content = {
 			applying new security patches and application upgrades.
 
 			[center]<#[url=https://www.cyber.gov.au/learn/update-devices]Click here to learn more.[/url]#>[/center]
+
+			<?[url=$end]CONTINUE[/url]?>
+			"""
+		),
+	},
+	"2fa":
+	{
+		"$begin":
+		Utils.dialog_part(
+			"""
+			I finally got around to create an account with that
+			<~Cloud Service Provider~>. Now it's asking me if
+			I want to enable <!Two Factor Authentication!>.
+
+			I'm not sure... that always makes logging in so
+			tedious and more time consuming...
+
+			<?[url=$enable:good]1) I will enable 2FA.[/url]?>
+
+			<?[url=$disable:bad]2) Not now, maybe later.[/url]?>
+			"""
+		),
+		"$enable":
+		Utils.dialog_part(
+			"""
+			<~Yes, always enable 2FA when available!~>
+
+			2FA makes it much more difficult for attackers to get
+			into your account, even if they got their hands on
+			your password.
+
+			Enabling 2FA is one of the most effective ways
+			you can enhance your personal cybersecurity.
+
+			[center]<#[url=https://www.techtarget.com/searchsecurity/definition/two-factor-authentication]Click here to learn more.[/url]#>[/center]
+
+			<?[url=$end]CONTINUE[/url]?>
+			"""
+		),
+		"$disable":
+		Utils.dialog_part(
+			"""
+			<!That's not the most secure decision...!>
+
+			2FA makes it much more difficult for attackers to get
+			into your account, even if they got their hands on
+			your password.
+
+			Enabling 2FA is one of the most effective ways
+			you can enhance your personal cybersecurity.
+
+			[center]<#[url=https://www.techtarget.com/searchsecurity/definition/two-factor-authentication]Click here to learn more.[/url]#>[/center]
 
 			<?[url=$end]CONTINUE[/url]?>
 			"""

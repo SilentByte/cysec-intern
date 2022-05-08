@@ -1,6 +1,6 @@
 extends Node
 
-const TOTAL_SCORABLE_INTERACTION_COUNT := 9
+const TOTAL_SCORABLE_INTERACTION_COUNT := 10
 
 var _last_interaction := ""
 var _had_interactions := {}
