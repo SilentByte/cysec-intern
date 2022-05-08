@@ -30,16 +30,23 @@ That is why it is important that all people have a good grasp on basic cybersecu
 
 CySec Intern is essentially a top-down RPG where you play as a newly hired intern. You can walk around, explore the world, and interact with objects and people. There are numerous cybersecurity-related challenges spread around the world that need to be found and solved correctly.
 
+![City](docs/city.png)
+
 Each challenge is a different but generally common scenario many regular computer users will have encountered before but may not have known how to act or realized that their cybersecurity may be at risk. For each task, there is a description of what the correct way to approach this issue is and a link that leads to additional information about the topic.
+
+![City](docs/dialog.png)
 
 While playing, the game is keeping track of the score and what challenges have been solved.
 
 CySec Intern is designed with modularity in mind, so that it is trivial to add more challenges or customize them for a specific event. For example, we are considering adding more challenges in the style of Capture The Flag (CTF), which are common in the cybersecurity community and are generally much harder to solve (i.e. solving them requires more in-depth computer knowledge).
 
+![City](docs/office.png)
 
 ## How we built it
 
 The game has been built using the [Godot Game Engine](https://godotengine.org). The game grew organically and we constantly tweaked and extended it, so it is difficult to gave a clear order of events.
+
+![City](docs/editor.png)
 
 We started by building a small part of the city using tilemap systems. We then continously expanded the game world and started implementing 'actors' and 'interactables', as well as a dialog/notification system, a portal/teleport system, a scene transition system, and a system that keeps tracks of 'game facts' (i.e. what parts of the world have been accessed, what the scores are, etc.).
 
