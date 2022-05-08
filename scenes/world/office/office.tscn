@@ -278,7 +278,8 @@ tile_data = PoolIntArray( 393229, 2, 655394, 458757, 1, 17, 458764, 1, 17, 45876
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 192, 384, 192, 304, 172, 304, 172, 288, 144, 288, 144, 304, 128, 304, 128, 288, 92, 288, 92, 256, 128, 256, 128, 272, 160, 272, 160, 256, 176, 256, 176, 228, 174, 228, 174, 212, 160, 212, 160, 204, 144, 204, 144, 176, 160, 176, 176, 176, 176, 147, 160, 147, 160, 112, 195, 112, 195, 128, 237, 128, 237, 96, 64, 96, 64, 384 )
+position = Vector2( 1, 0 )
+polygon = PoolVector2Array( 192, 384, 192, 304, 172, 304, 172, 288, 144, 288, 144, 304, 128, 304, 128, 288, 92, 288, 92, 256, 128, 256, 128, 272, 160, 272, 160, 256, 176, 256, 176, 228, 174, 228, 174, 212, 160, 212, 160, 204, 144, 204, 144, 176, 160, 176, 176, 176, 176, 147, 157, 147, 157, 140, 147, 140, 147, 129, 157, 129, 157, 112, 195, 112, 195, 128, 237, 128, 237, 96, 64, 96, 64, 384 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 240, 384, 240, 304, 280, 304, 324, 304, 324, 295, 332, 295, 332, 304, 342, 304, 342, 272, 272, 272, 272, 256, 256, 256, 256, 227, 272, 227, 272, 203, 256, 203, 256, 189, 272, 189, 272, 176, 256, 176, 256, 147, 336, 147, 336, 128, 323, 128, 323, 112, 237, 112, 237, 80, 368, 80, 368, 384 )
@@ -304,22 +305,26 @@ texture = ExtResource( 10 )
 position = Vector2( 0, 1 )
 message = "<~Hey, I'm Nathan!~> Want to hear my best advice on how to improve your cybersecurity? Use a <!password manager!>! It makes the sign-in process so much more secure and simpler!"
 
-[node name="Laptop2" type="Sprite" parent="Actors"]
+[node name="StephenLaptop" type="Sprite" parent="Actors"]
 position = Vector2( 152, 182 )
 texture = ExtResource( 12 )
 
-[node name="Stephen" type="Sprite" parent="Actors/Laptop2"]
+[node name="Stephen" type="Sprite" parent="Actors/StephenLaptop"]
 position = Vector2( 0, 8 )
 texture = ExtResource( 11 )
 
-[node name="MessageInteractable2" parent="Actors/Laptop2" instance=ExtResource( 9 )]
+[node name="MessageInteractable2" parent="Actors/StephenLaptop" instance=ExtResource( 9 )]
 position = Vector2( 0, 7 )
 scale = Vector2( 1, 2 )
 message = "<~Hey, my name is Stephen!~> Here's my take: <!never!> share your password with anyone! A password is <!always personal!> and should never be given away. You may get <!impersonated!> if you do!"
 
-[node name="Laptop" parent="Actors" instance=ExtResource( 6 )]
+[node name="UpgradesLaptop" parent="Actors" instance=ExtResource( 6 )]
 position = Vector2( 263, 182 )
 mode = "upgrades"
+
+[node name="2FALaptop" parent="Actors" instance=ExtResource( 6 )]
+position = Vector2( 154, 134 )
+mode = "2fa"
 
 [node name="Adrian" type="Sprite" parent="Actors"]
 position = Vector2( 304, 280 )

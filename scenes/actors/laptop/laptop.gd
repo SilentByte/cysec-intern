@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(String, "vpn", "upgrades", "exe", "2fa") var mode = "vpn"
+export(String, "vpn", "upgrades", "exe", "2fa", "malware") var mode = "vpn"
 
 onready var hud := $"/root/Main/Hud"
 onready var audio := $AudioStreamPlayer
@@ -200,6 +200,58 @@ var dialog_content = {
 			you can enhance your personal cybersecurity.
 
 			[center]<#[url=https://www.techtarget.com/searchsecurity/definition/two-factor-authentication]Click here to learn more.[/url]#>[/center]
+
+			<?[url=$end]CONTINUE[/url]?>
+			"""
+		),
+	},
+	"malware":
+	{
+		"$begin":
+		Utils.dialog_part(
+			"""
+			Oh, no. That's concerning. I was just shopping online
+			and now this message popped up telling me that my
+			computer has been <!infected by malware!> and that I
+			should run a scan...
+
+			<?[url=$scan:bad]1) Click on 'RUN SCAN NOW'.[/url]?>
+
+			<?[url=$close:good]2) Close the browser pop-up.[/url]?>
+			"""
+		),
+		"$scan":
+		Utils.dialog_part(
+			"""
+			<!Whoops, that wasn't a good idea!!>
+
+			This is a common scare tactic and phishing attempt.
+			Do not click on pop-ups like that and make sure to
+			close the <!browser window!>.
+
+			Sometimes, sneaky pop-ups show a CLOSE button that
+			actually registers a click and starts a download
+			instead of closing the window. <!Be careful!!>
+
+			[center]<#[url=https://www.kaspersky.com.au/resource-center/threats/identify-and-remove-fake-pop-ups]Click here to learn more.[/url]#>[/center]
+
+			<?[url=$end]CONTINUE[/url]?>
+			"""
+		),
+		"$close":
+		Utils.dialog_part(
+			"""
+			<~That's it!~>
+
+			This is a common scare tactic and phishing attempt.
+			Do not click on pop-ups like that and make sure to
+			close the <!browser window!>.
+
+			Sometimes, sneaky pop-ups show a CLOSE button that
+			actually registers a click and starts a download
+			instead of closing the window. <!Be careful!!>
+
+			[center]<#[url=https://www.kaspersky.com.au/resource-center/threats/identify-and-remove-fake-pop-ups]Click here to learn more.[/url]#>[/center]
 
 			<?[url=$end]CONTINUE[/url]?>
 			"""

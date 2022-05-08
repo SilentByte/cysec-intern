@@ -11,7 +11,7 @@ func interact() -> void:
 
 	audio.play()
 	hud.show_message(
-		"piano", "... ... ... ... \nThis tune sounds... [wave][color=#b00]familiar[/color][/wave]!"
+		"... ... ... ... \nThis tune sounds... [wave][color=#b00]familiar[/color][/wave]!"
 	)
 
 

@@ -513,7 +513,7 @@ position = Vector2( 247, 247 )
 
 [node name="2FALaptop" parent="Actors" instance=ExtResource( 7 )]
 position = Vector2( 283, 150 )
-mode = "2fa"
+mode = "malware"
 
 [node name="Thomas" type="Sprite" parent="."]
 position = Vector2( 120, 176 )
