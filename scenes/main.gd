@@ -8,6 +8,7 @@ func _ready() -> void:
 		return
 
 	hud.show_dialog(
+		"welcome",
 		{
 			"$begin":
 			Utils.dialog_part(
@@ -15,8 +16,11 @@ func _ready() -> void:
 				<!HI THERE!>
 
 				We at CySec Inc. welcome you as our new intern! :-)
-				Give yourself some time to explore this part of town and then make your way to
-				our office in the NORTH-EAST.
+				Give yourself some time to explore this part of town
+				and then make your way to our office in the NORTH-EAST.
+
+				Use WASD keys to move, E to interact, and use
+				your mouse to select options.
 
 				[center]<?[url=$end]CLOSE[/url]?>[/center]
 				"""
