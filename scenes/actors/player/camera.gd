@@ -24,6 +24,9 @@ func _set_zoom_level(value: float) -> void:
 
 
 func _input(event):
+	if not OS.is_debug_build():
+		return
+
 	if event.is_action_pressed("zoom_in"):
 		_set_zoom_level(_zoom_level - zoom_offset)
 

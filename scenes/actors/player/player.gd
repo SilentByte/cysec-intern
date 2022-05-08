@@ -79,7 +79,8 @@ func _process_input() -> void:
 			var interactable = forward_ray_cast.get_collider()
 			Utils.try_call(interactable, "interact")
 
-	is_running = Input.is_action_pressed("run")
+	if OS.is_debug_build():
+		is_running = Input.is_action_pressed("run")
 
 
 func _process_animation() -> void:
