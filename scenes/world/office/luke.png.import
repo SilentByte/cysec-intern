@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/john.png-6514b42c4786fa3f7dd0b5d11fbf07d9.stex"
+path="res://.import/luke.png-5f2a208e2a676f0fd74401064ee0279f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/world/office/john.png"
-dest_files=[ "res://.import/john.png-6514b42c4786fa3f7dd0b5d11fbf07d9.stex" ]
+source_file="res://scenes/world/office/luke.png"
+dest_files=[ "res://.import/luke.png-5f2a208e2a676f0fd74401064ee0279f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mike.png-1d700bfce89d62f666f7062ad4c9ee95.stex"
+path="res://.import/adrian.png-c8ae1d2d5ae13576cb7b7ec24d3c2def.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/world/office/mike.png"
-dest_files=[ "res://.import/mike.png-1d700bfce89d62f666f7062ad4c9ee95.stex" ]
+source_file="res://scenes/world/office/adrian.png"
+dest_files=[ "res://.import/adrian.png-c8ae1d2d5ae13576cb7b7ec24d3c2def.stex" ]
 
 [params]
 

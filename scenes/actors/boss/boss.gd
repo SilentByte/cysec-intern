@@ -20,6 +20,8 @@ func interact() -> void:
 			"""
 			<~Hey, my new favorite intern! :-)~>
 
+			I'm Maria and I'm in charge of this department.
+
 			So far, you have found <!%s out of %s challenges!>,
 			with an <!overall score of %s%%!>.
 

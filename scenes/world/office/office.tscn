@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/indoors.png" type="Texture" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://tilesets/outdoors.png" type="Texture" id=4]
 [ext_resource path="res://scenes/world/office/addons.png" type="Texture" id=5]
 [ext_resource path="res://scenes/actors/laptop/laptop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/world/office/john.png" type="Texture" id=7]
-[ext_resource path="res://scenes/world/office/mike.png" type="Texture" id=8]
+[ext_resource path="res://scenes/world/office/luke.png" type="Texture" id=7]
+[ext_resource path="res://scenes/world/office/adrian.png" type="Texture" id=8]
 [ext_resource path="res://scenes/actors/message_interactable/message_interactable.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/world/office/nathan.png" type="Texture" id=10]
 [ext_resource path="res://scenes/world/office/stephen.png" type="Texture" id=11]
 [ext_resource path="res://scenes/actors/laptop/laptop.png" type="Texture" id=12]
 [ext_resource path="res://scenes/actors/boss/boss.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/world/office/chris.png" type="Texture" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Everything"
@@ -275,10 +276,9 @@ format = 1
 tile_data = PoolIntArray( 393229, 2, 655394, 458757, 1, 17, 458764, 1, 17, 458765, 2, 786463, 458766, 1, 17, 589829, 3, 4, 589830, 3, 5, 589831, 3, 5, 589832, 3, 5, 589833, 3, 5, 589834, 3, 3, 655365, 3, 65540, 655366, 3, 65541, 655367, 3, 65541, 655368, 3, 65541, 655369, 3, 65541, 655370, 3, 65539, 917509, 3, 4, 917510, 3, 5, 917511, 3, 5, 917512, 3, 5, 917513, 3, 5, 917514, 3, 3, 917520, 3, 4, 917521, 3, 5, 917522, 3, 5, 917523, 3, 5, 917524, 3, 5, 917525, 3, 3, 983045, 3, 65540, 983046, 3, 65541, 983047, 3, 65541, 983048, 3, 65541, 983049, 3, 65541, 983050, 3, 65539, 983056, 3, 65540, 983057, 3, 65541, 983058, 3, 65541, 983059, 3, 65541, 983060, 3, 65541, 983061, 3, 65539 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 192, 384, 192, 304, 172, 304, 172, 288, 144, 288, 144, 304, 128, 304, 128, 288, 92, 288, 92, 256, 128, 256, 128, 272, 160, 272, 160, 256, 176, 256, 176, 212, 160, 212, 160, 176, 176, 176, 176, 147, 160, 147, 160, 112, 195, 112, 195, 128, 237, 128, 237, 96, 64, 96, 64, 384 )
+polygon = PoolVector2Array( 192, 384, 192, 304, 172, 304, 172, 288, 144, 288, 144, 304, 128, 304, 128, 288, 92, 288, 92, 256, 128, 256, 128, 272, 160, 272, 160, 256, 176, 256, 176, 228, 174, 228, 174, 212, 160, 212, 160, 204, 144, 204, 144, 176, 160, 176, 176, 176, 176, 147, 160, 147, 160, 112, 195, 112, 195, 128, 237, 128, 237, 96, 64, 96, 64, 384 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 240, 384, 240, 304, 280, 304, 324, 304, 324, 295, 332, 295, 332, 304, 342, 304, 342, 272, 272, 272, 272, 256, 256, 256, 256, 227, 272, 227, 272, 203, 256, 203, 256, 189, 272, 189, 272, 176, 256, 176, 256, 147, 336, 147, 336, 128, 323, 128, 323, 112, 237, 112, 237, 80, 368, 80, 368, 384 )
@@ -297,38 +297,53 @@ position = Vector2( 0, -16 )
 [node name="Actors" type="Node2D" parent="."]
 
 [node name="Nathan" type="Sprite" parent="Actors"]
-position = Vector2( 104, 219 )
+position = Vector2( 168, 219 )
 texture = ExtResource( 10 )
 
+[node name="MessageInteractable" parent="Actors/Nathan" instance=ExtResource( 9 )]
+position = Vector2( 0, 1 )
+message = "<~Hey, I'm Nathan!~> Want to hear my best advice on how to improve your cybersecurity? Use a <!password manager!>! It makes the sign-in process so much more secure and simpler!"
+
 [node name="Laptop2" type="Sprite" parent="Actors"]
-position = Vector2( 120, 182 )
+position = Vector2( 152, 182 )
 texture = ExtResource( 12 )
 
 [node name="Stephen" type="Sprite" parent="Actors/Laptop2"]
 position = Vector2( 0, 8 )
 texture = ExtResource( 11 )
 
+[node name="MessageInteractable2" parent="Actors/Laptop2" instance=ExtResource( 9 )]
+position = Vector2( 0, 7 )
+scale = Vector2( 1, 2 )
+message = "<~Hey, my name is Stephen!~> Here's my take: <!never!> share your password with anyone! A password is <!always personal!> and should never be given away. You may get <!impersonated!> if you do!"
+
 [node name="Laptop" parent="Actors" instance=ExtResource( 6 )]
 position = Vector2( 263, 182 )
 mode = "upgrades"
 
-[node name="MessageInteractable" parent="Actors" instance=ExtResource( 9 )]
-position = Vector2( 306, 288 )
+[node name="Adrian" type="Sprite" parent="Actors"]
+position = Vector2( 304, 280 )
+texture = ExtResource( 8 )
+
+[node name="Luke" type="Sprite" parent="Actors/Adrian"]
+position = Vector2( 0, 10 )
+texture = ExtResource( 7 )
+
+[node name="MessageInteractable" parent="Actors/Adrian" instance=ExtResource( 9 )]
+position = Vector2( 2, 8 )
 scale = Vector2( 1, 2 )
 message = "... ... May I help you? ... ... ...
 
 <~ OH RIGHT! HEY, LISTEN UP EVERYBODY! SAY HI TO THE NEW INTERN! ~>
 
-Welcome to CySec! My name is Mike and this is John, we're both Cyber Security Specialists!"
+Welcome to CySec! My name is Luke and this is Adrian, we're both Cyber Security Specialists!"
 
-[node name="Mike" type="Sprite" parent="Actors/MessageInteractable"]
-position = Vector2( -2, -4 )
-scale = Vector2( 1, 0.5 )
-texture = ExtResource( 8 )
-
-[node name="John" type="Sprite" parent="Actors/MessageInteractable/Mike"]
-position = Vector2( 0, 10 )
-texture = ExtResource( 7 )
-
-[node name="Boss" parent="." instance=ExtResource( 13 )]
+[node name="Boss" parent="Actors" instance=ExtResource( 13 )]
 position = Vector2( 312, 144 )
+
+[node name="Chris" type="Sprite" parent="Actors"]
+position = Vector2( 184, 120 )
+texture = ExtResource( 14 )
+
+[node name="MessageInteractable" parent="Actors/Chris" instance=ExtResource( 9 )]
+message = "<~Good day to you!~> Name's Chris, I'm the senior cybersecurity expert here. I've seen it all! Here's a good one: when you browse the web, always check that <!HTTPS!> is being used. If it only says <!HTTP!>, do not enter any sensitive information, such as your password!"
