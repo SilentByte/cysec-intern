@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="CySec Intern is a casual game where you explore the world as a newly hired intern and learn more about cybersecurity concepts on your journey.">
+
+    <title>CySec Intern</title>
+
+    <link rel="icon" href="favicon.ico">
+
+    <style>
+        @font-face {
+            font-family: 'monogram';
+            src: url('monogram-extended.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            font-family: monogram, Arial, sans-serif;
+            font-size: 48px;
+            background-color: #37363d;
+            color: #fff;
+        }
+
+        .wrapper {
+            display: flex;
+            margin: 0 32px;
+
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand {
+            height: 64px;
+            margin: 32px 0;
+        }
+
+        .brand img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .game-container {
+            display: flex;
+
+            width: 100%;
+            max-width: 1280px;
+            aspect-ratio: 16 / 9;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+
+            border: 4px solid white;
+
+        }
+
+        .game-container iframe {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            border: none;
+        }
+
+        .content {
+            max-width: 1280px;
+            margin-bottom: 64px;
+            line-height: 48px;
+            text-align: center;
+        }
+
+        .no-border {
+            border: none;
+        }
+
+        .extra-spacing {
+            padding: 32px 0;
+        }
+
+        a {
+            color: white;
+            border-bottom: 3px solid white;
+            text-decoration: none;
+        }
+
+        section {
+            margin: 32px 64px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="brand">
+            <img src="logo.png"
+                 alt="CySec Intern" />
+        </div>
+
+        <div class="game-container">
+            <iframe src="game-placeholder.html"
+                    width="100%"
+                    height="100%">
+            </iframe>
+        </div>
+
+        <div class="content">
+            <section>
+                CySec Intern is a casual game where you explore the world as a newly hired intern and learn more about
+                cybersecurity concepts on your journey.
+
+                It has been created for the <a href="https://devpost.com/software/cysec-intern" target="_blank">
+                Secureworks&reg; Cybersecurity Literacy Challenge</a>.
+            </section>
+
+            <section class="extra-spacing">
+                <a href="https://secureworks.devpost.com"
+                   target="_blank"
+                   class="no-border">
+                    <img src="challenge.png"
+                         alt="Secureworks Cybersecurity Literacy Challenge" />
+                </a>
+            </section>
+
+            <section>
+                This game has been created using the <a href="https://godotengine.org" target="_blank">Godot Game
+                Engine</a> and the source code is available on <a href="https://github.com/SilentByte/cysec-intern"
+                                                                  target="_blank"> Github @SilentByte.</a>
+            </section>
+
+            <section>
+                <a href="https://twitter.com/RicoBeti"
+                   target="_blank">
+                    Follow me on Twitter @RicoBeti.
+                </a>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

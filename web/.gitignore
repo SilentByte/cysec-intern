@@ -1,0 +1,10 @@
+firebase-debug.log*
+firebase-debug.*.log*
+
+.firebase
+.firebaserc
+.idea
+.env
+
+public/game/*
+!public/game/.gitkeep
