@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://tilesets/city.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/indoors.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/actors/social_engineer/social_engineer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/actors/message_interactable/message_interactable.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/world/lobby/receptionist.png" type="Texture" id=9]
+[ext_resource path="res://scenes/world/lobby/elevator.png" type="Texture" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Everything"
@@ -187,7 +188,13 @@ cell_tile_origin = 1
 format = 1
 tile_data = PoolIntArray( 393221, 1, 16, 393235, 1, 16, 393237, 2, 655394, 458757, 1, 17, 458773, 2, 786463, 524309, 2, 655391, 589845, 2, 786463, 655381, 2, 655391, 720917, 2, 786463, 786453, 2, 655394, 851989, 2, 786463, 917525, 2, 655394, 983061, 2, 786463, 1048597, 2, 655391, 1114133, 2, 786463, 1245196, 1, 17, 1245198, 1, 17, 1310732, 1, 16, 1310734, 1, 16, 1376268, 1, 17, 1376270, 1, 17, 1441804, 1, 16, 1441806, 1, 16 )
 
+[node name="Elevator" type="Sprite" parent="OverDecorations"]
+position = Vector2( 214, 45 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( -64, -16 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -201,6 +208,7 @@ position = Vector2( -64, -16 )
 
 [node name="CityPortal" parent="Portals" instance=ExtResource( 3 )]
 position = Vector2( 216, 360 )
+scale = Vector2( 2, 1 )
 portal_name = "LobbyPortal"
 target_scene = "res://scenes/world/city/city.tscn"
 
@@ -209,6 +217,7 @@ position = Vector2( 0, -16 )
 
 [node name="OfficePortal" parent="Portals" instance=ExtResource( 3 )]
 position = Vector2( 216, 80 )
+scale = Vector2( 4, 1 )
 portal_name = "LobbyPortal"
 target_scene = "res://scenes/world/office/office.tscn"
 

@@ -4,7 +4,7 @@ onready var hud := $"/root/Main/Hud"
 onready var audio := $AudioStreamPlayer
 onready var poi := $PointOfInterest
 
-var _last_total_score := -1.0
+var _last_completion_ratio := -1.0
 
 
 func interact() -> void:
@@ -12,7 +12,7 @@ func interact() -> void:
 		return
 
 	audio.play()
-	_last_total_score = Facts.total_score()
+	_last_completion_ratio = Facts.completion_ratio()
 
 	var content := ""
 	if Facts.scored_interaction_count() < Facts.TOTAL_SCORABLE_INTERACTION_COUNT:
@@ -60,4 +60,4 @@ func interact() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	poi.visible = _last_total_score != Facts.total_score()
+	poi.visible = _last_completion_ratio != Facts.total_score()

@@ -540,7 +540,7 @@ polygon = PoolVector2Array( 512, 224, 512, 285, 576, 285, 576, 256, 591, 256, 59
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 0, 16 )
-polygon = PoolVector2Array( 192, 488, 192, 480, 176, 480, 176, 512, 208, 512, 208, 488 )
+polygon = PoolVector2Array( 189, 488, 189, 483, 178, 483, 178, 512, 208, 512, 208, 488 )
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 0, 16 )
