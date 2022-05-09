@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="CySec Intern is a casual game where you explore the world as a newly hired intern and learn more about cybersecurity concepts on your journey.">
+
+    <title>CySec Intern</title>
+
+    <link rel="icon" href="favicon.ico">
+
+    <style>
+        @font-face {
+            font-family: 'monogram';
+            src: url('../monogram-extended.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            font-family: monogram, Arial, sans-serif;
+            font-size: 48px;
+            background-color: #37363d;
+            color: #fff;
+        }
+
+        .wrapper {
+            display: flex;
+            margin: 0 32px;
+
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand {
+            height: 64px;
+            margin: 32px 0;
+        }
+
+        .brand img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .game-container {
+            display: flex;
+
+            width: 100%;
+            max-width: 1280px;
+            aspect-ratio: 16 / 9;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+
+            border: 4px solid white;
+
+        }
+
+        .game-container iframe {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            border: none;
+        }
+
+        .content {
+            max-width: 1280px;
+            margin-bottom: 64px;
+            line-height: 48px;
+            text-align: center;
+        }
+
+        .no-border {
+            border: none;
+        }
+
+        .no-filter {
+            image-rendering: pixelated;
+        }
+
+        .extra-spacing {
+            padding: 32px 0;
+        }
+
+        a {
+            color: white;
+            border-bottom: 3px solid white;
+            text-decoration: none;
+        }
+
+        section {
+            margin: 32px 64px
+        }
+
+        section img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="brand">
+            <img src="../logo.png"
+                 alt="CySec Intern" />
+        </div>
+
+        <div class="content">
+            <section>
+                You couldn't resist scanning the QR code, could you? :-P
+            </section>
+
+            <section>
+                In this case, nothing happened because this is not a malicious website.
+                However, be extra careful when scanning QR Codes, you may not end up where you intended to.
+            </section>
+
+            <section>
+                <a href="../">Click here to go back.</a>
+            </section>
+
+            <section class="extra-spacing">
+                <img src="../heart.png"
+                     alt="Heart"
+                     class="no-filter"
+                     style="width: 64px; height: 64px" />
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
